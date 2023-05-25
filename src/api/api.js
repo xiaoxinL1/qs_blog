@@ -18,7 +18,8 @@ export const getByIdApi = (id) => {
 }
 export const ImageApi = ()=>{
 	return axios({
-		url:"https://picsum.photos/200",
+		// "/img/rain-bg2.4b616143.gif"
+		url:require('@/static/rain/rain-bg2.gif'),
 		method:"GET",
 	})
 }

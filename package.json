@@ -12,20 +12,18 @@
     "axios": "^1.3.4",
     "core-js": "^3.8.3",
     "element-ui": "^2.15.13",
-    "jsonp": "^0.2.1",
+    "highlight.js": "^11.7.0",
+    "marked": "^4.3.0",
     "mockjs": "^1.1.0",
     "muse-ui": "^3.0.2",
     "postcss-pxtorem": "^6.0.0",
-    "qrcode": "^1.5.1",
     "sass": "^1.60.0",
     "sass-loader": "^13.2.2",
-    "vant": "^2.12.54",
     "vue": "^2.6.14",
-    "vue-jsonp": "^2.0.0",
+    "vue-lazyload": "^1.3.3",
     "vue-router": "^3.5.1",
     "vue-totop": "^1.0.3",
-    "vuex": "^3.6.2",
-    "wowjs": "^1.1.3"
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
@@ -35,7 +33,8 @@
     "compression-webpack-plugin": "^10.0.0",
     "less": "^4.0.0",
     "less-loader": "^8.0.0",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "wowjs": "^1.1.3"
   },
   "browserslist": [
     "> 1%",

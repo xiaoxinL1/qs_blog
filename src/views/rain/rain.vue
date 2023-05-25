@@ -3,7 +3,7 @@
 		<div class="logo-img" @click="toIndex">
 			<span class="logo-text">千 · 山</span>
 		</div>
-		<img class="rain-bg" src="@/static/rain/rain-bg.gif" draggable="false">
+		<img class="rain-bg" :src="img" draggable="false" >
 
 		<!-- <img class="words" src="@/static/rain/words.png" draggable="false"> -->
 		<div class="words">
@@ -43,6 +43,8 @@
 </template>
 
 <script>
+	import {ImageApi} from "@/api/api.js";
+	import axios from "axios"
 	export default {
 		data() {
 			return {
@@ -71,16 +73,38 @@
 			}
 		},
 		mounted() {
-			var timer = setInterval(() => {
-				this.width += 10;
-				if (this.width > 99) {
-					clearInterval(timer);
-					this.loadingClass = 'hide';
-					this.$nextTick(() => this.music(0, false))
+			// var timer = setInterval(() => {
+			// 	this.width += 10;
+			// 	if (this.width > 99) {
+			// 		clearInterval(timer);
+			// 		this.loadingClass = 'hide';
+			// 		this.$nextTick(() => this.music(0, false))
+			// 	}
+			// }, 100)
+			const xhr = new XMLHttpRequest()
+			xhr.open('GET', '/img/rain-bg2.4b616143.gif')
+			xhr.send()
+			xhr.onprogress = (res) => {
+				if (res.lengthComputable) {
+					const result = res.loaded / res.total * 100
+					this.width = result + '%'
+				} else {
+					this.width = '99%'
 				}
-			}, 100)
+			}
+			
+			xhr.onreadystatechange = (res) => {
+				const target = res.currentTarget;
+				if (target.status === 200 && target.readyState === 4) {
+					setTimeout(() => {
+						this.loadingClass = 'hide' 
+						this.img = '/img/rain-bg2.4b616143.gif'
+						this.$nextTick(() => this.music(0, false))
+					}, 100)
+				}
+			}
 		},
-		methods: {
+		methods:{
 			music(type, active) {
 				this.$set(this.rainIcon[type], 'active', !active)
 				let music = document.getElementsByClassName("music");
@@ -149,6 +173,7 @@
 			color: #fff;
 
 			p {
+				font-size:15px;
 				line-height: 30px;
 				font-family: cursive;
 				text-align: center;
@@ -238,6 +263,10 @@
 				left: 50%;
 				right: auto;
 				transform: translate(-50%, -50%);
+
+				p {
+					font-size: 14px;
+				}
 			}
 
 			.option {

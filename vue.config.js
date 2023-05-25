@@ -1,29 +1,10 @@
 const {
 	defineConfig
 } = require('@vue/cli-service')
-
 module.exports = defineConfig({
 	transpileDependencies: true,
-	// pages: {
-	// 	index: {
-	// 		//入口
-	// 		entry: "src/main.js",
-	// 	},
-	// },
-	// devServer: {
-	// 	proxy: {
-	// 		'/api': {
-	// 			target: 'https://api.btstu.cn',
-	// 			pathRewrite: {
-	// 				'^/api': ''
-	// 			},
-	// 			ws: true,
-	// 			changeOrigin: true
-	// 		}
-	// 	}
-	// }
-
 })
+
 // module.exports = {
 //   css: {
 //     loaderOptions: {

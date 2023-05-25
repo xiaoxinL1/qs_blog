@@ -52,7 +52,7 @@
 </template>
 
 <script>
-	import QRCode from "qrcode"
+	// import QRCode from "qrcode"
 	// import scrollMixin from '~/mixin/scroll.js'
 	export default {
 		// mixins: [scrollMixin],
@@ -104,13 +104,13 @@
 		},
 		mounted() {
 			const o = {
-				articlePage: () => {
-					this.$nextTick(() => {
-						const canvas = document.getElementById('qrccode')
-						QRCode.toCanvas(canvas, window.location.href)
-					})
-					this.isLike = !!localStorage.getItem(`like-${this.like}`)
-				},
+				// articlePage: () => {
+				// 	this.$nextTick(() => {
+				// 		const canvas = document.getElementById('qrccode')
+				// 		QRCode.toCanvas(canvas, window.location.href)
+				// 	})
+				// 	this.isLike = !!localStorage.getItem(`like-${this.like}`)
+				// },
 				sticky: () => {
 					this.$watch('scroll_current', this.scrollStatus, {
 						immediate: true
